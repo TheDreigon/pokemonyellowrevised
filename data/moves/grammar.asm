@@ -21,13 +21,13 @@ ExclamationPointMoveSets:
 	db 0 ; end set
 
 ; set 3
-	db POUND
+	db BUG_BITE
 	db SCRATCH
 	db VICEGRIP
 	db WING_ATTACK
 	db FLY
 	db BIND
-	db SLAM
+	db DRAGON_SLAM
 	db HORN_ATTACK
 	db BODY_SLAM
 	db WRAP

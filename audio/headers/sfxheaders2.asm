@@ -379,9 +379,9 @@ SFX_Battle_09::
 	channel_count 1
 	channel 5, SFX_Battle_09_Ch5
 
-SFX_Pound::
+SFX_Bug_Bite::
 	channel_count 1
-	channel 8, SFX_Pound_Ch8
+	channel 8, SFX_Bug_Bite_Ch8
 
 SFX_Battle_0B::
 	channel_count 1

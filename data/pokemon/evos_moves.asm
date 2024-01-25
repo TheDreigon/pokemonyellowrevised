@@ -206,7 +206,7 @@ RhydonEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 30, STOMP
+	db 30, GROUND_STOMP
 	db 35, TAIL_WHIP
 	db 40, FURY_ATTACK
 	db 48, HORN_DRILL
@@ -315,17 +315,17 @@ ExeggutorEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 28, STOMP
+	db 28, GROUND_STOMP
 	db 0
 
 LickitungEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 7, STOMP
+	db 7, GROUND_STOMP
 	db 15, DISABLE
 	db 23, DEFENSE_CURL
-	db 31, SLAM
+	db 31, DRAGON_SLAM
 	db 39, SCREECH
 	db 0
 
@@ -405,7 +405,7 @@ RhyhornEvosMoves:
 	db EVOLVE_LEVEL, 42, RHYDON
 	db 0
 ; Learnset
-	db 30, STOMP
+	db 30, GROUND_STOMP
 	db 35, TAIL_WHIP
 	db 40, FURY_ATTACK
 	db 45, HORN_DRILL
@@ -418,7 +418,7 @@ LaprasEvosMoves:
 	db 0
 ; Learnset
 	db 16, SING
-	db 20, MIST
+	db 20, ICY_MIST
 	db 25, BODY_SLAM
 	db 31, CONFUSE_RAY
 	db 38, ICE_BEAM
@@ -550,7 +550,7 @@ TangelaEvosMoves:
 	db 32, POISONPOWDER
 	db 36, STUN_SPORE
 	db 39, SLEEP_POWDER
-	db 45, SLAM
+	db 45, DRAGON_SLAM
 	db 48, GROWTH
 	db 0
 
@@ -585,7 +585,7 @@ OnixEvosMoves:
 	db 15, BIND
 	db 19, ROCK_THROW
 	db 25, RAGE
-	db 33, SLAM
+	db 33, DRAGON_SLAM
 	db 43, HARDEN
 	db 0
 
@@ -876,7 +876,7 @@ TaurosEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 21, STOMP
+	db 21, GROUND_STOMP
 	db 28, TAIL_WHIP
 	db 35, LEER
 	db 44, RAGE
@@ -933,7 +933,7 @@ DragoniteEvosMoves:
 ; Learnset
 	db 10, THUNDER_WAVE
 	db 20, AGILITY
-	db 35, SLAM
+	db 35, DRAGON_SLAM
 	db 45, DRAGON_RAGE
 	db 60, HYPER_BEAM
 	db 0
@@ -1009,7 +1009,7 @@ ArticunoEvosMoves:
 ; Learnset
 	db 51, BLIZZARD
 	db 55, AGILITY
-	db 60, MIST
+	db 60, ICY_MIST
 	db 0
 
 ZapdosEvosMoves:
@@ -1046,7 +1046,7 @@ KrabbyEvosMoves:
 ; Learnset
 	db 20, VICEGRIP
 	db 25, GUILLOTINE
-	db 30, STOMP
+	db 30, GROUND_STOMP
 	db 35, CRABHAMMER
 	db 40, HARDEN
 	db 0
@@ -1096,7 +1096,7 @@ PikachuEvosMoves:
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
 	db 15, DOUBLE_TEAM
-	db 20, SLAM
+	db 20, DRAGON_SLAM
 	db 26, THUNDERBOLT
 	db 33, AGILITY
 	db 41, THUNDER
@@ -1128,7 +1128,7 @@ DratiniEvosMoves:
 ; Learnset
 	db 10, THUNDER_WAVE
 	db 20, AGILITY
-	db 30, SLAM
+	db 30, DRAGON_SLAM
 	db 40, DRAGON_RAGE
 	db 50, HYPER_BEAM
 	db 0
@@ -1140,7 +1140,7 @@ DragonairEvosMoves:
 ; Learnset
 	db 10, THUNDER_WAVE
 	db 20, AGILITY
-	db 35, SLAM
+	db 35, DRAGON_SLAM
 	db 45, DRAGON_RAGE
 	db 55, HYPER_BEAM
 	db 0
@@ -1250,7 +1250,7 @@ JigglypuffEvosMoves:
 	db EVOLVE_ITEM, MOON_STONE, 1, WIGGLYTUFF
 	db 0
 ; Learnset
-	db 9, POUND
+	db 9, BUG_BITE
 	db 14, DISABLE
 	db 19, DEFENSE_CURL
 	db 24, DOUBLESLAP
@@ -1318,7 +1318,7 @@ VaporeonEvosMoves:
 	db 30, BITE
 	db 36, AURORA_BEAM
 	db 42, HAZE
-	db 42, MIST
+	db 42, ICY_MIST
 	db 47, ACID_ARMOR
 	db 52, HYDRO_PUMP
 	db 0
@@ -1583,7 +1583,7 @@ MewtwoEvosMoves:
 	db 63, BARRIER
 	db 66, PSYCHIC_M
 	db 70, RECOVER
-	db 75, MIST
+	db 75, ICY_MIST
 	db 81, AMNESIA
 	db 0
 
@@ -1641,7 +1641,7 @@ KinglerEvosMoves:
 ; Learnset
 	db 20, VICEGRIP
 	db 25, GUILLOTINE
-	db 34, STOMP
+	db 34, GROUND_STOMP
 	db 42, CRABHAMMER
 	db 49, HARDEN
 	db 0
@@ -1879,7 +1879,7 @@ PonytaEvosMoves:
 	db 0
 ; Learnset
 	db 30, TAIL_WHIP
-	db 32, STOMP
+	db 32, GROUND_STOMP
 	db 35, GROWL
 	db 39, FIRE_SPIN
 	db 43, TAKE_DOWN
@@ -1891,7 +1891,7 @@ RapidashEvosMoves:
 	db 0
 ; Learnset
 	db 30, TAIL_WHIP
-	db 32, STOMP
+	db 32, GROUND_STOMP
 	db 35, GROWL
 	db 39, FIRE_SPIN
 	db 47, TAKE_DOWN
@@ -2143,7 +2143,7 @@ BellsproutEvosMoves:
 	db 21, STUN_SPORE
 	db 26, ACID
 	db 33, RAZOR_LEAF
-	db 42, SLAM
+	db 42, DRAGON_SLAM
 	db 0
 
 WeepinbellEvosMoves:
@@ -2157,7 +2157,7 @@ WeepinbellEvosMoves:
 	db 23, STUN_SPORE
 	db 29, ACID
 	db 38, RAZOR_LEAF
-	db 49, SLAM
+	db 49, DRAGON_SLAM
 	db 0
 
 VictreebelEvosMoves:

@@ -52,9 +52,9 @@ DEF BIT_TEST_BATTLE EQU 0
 DEF MIN_NEUTRAL_DAMAGE EQU 2
 DEF MAX_NEUTRAL_DAMAGE EQU 999
 
-; fixed damage constants
-DEF SONICBOOM_DAMAGE   EQU 20
-DEF DRAGON_RAGE_DAMAGE EQU 40
+; fixed damage constants ; TODO: maybe add a 3rd damage constant move?
+DEF SONICBOOM_DAMAGE   EQU 25
+DEF DRAGON_RAGE_DAMAGE EQU 50
 
 ; type effectiveness factors, scaled by 10
 DEF SUPER_EFFECTIVE    EQU 20
@@ -64,7 +64,7 @@ DEF NOT_VERY_EFFECTIVE EQU 05
 DEF NO_EFFECT          EQU 00
 
 ; non-volatile statuses
-DEF SLP_MASK EQU %111 ; 0-7 turns
+DEF SLP_MASK EQU %111 ; 0-7 turns ; TODO: find how to make Sleep only last a maximum of 5 turns.
 	const_def 3
 	const PSN ; 3
 	const BRN ; 4
@@ -90,14 +90,14 @@ DEF SPDSPCDV_TRAINER EQU $88
 
 ; wPlayerBattleStatus2 or wEnemyBattleStatus2 bit flags
 	const_def
-	const USING_X_ACCURACY    ; 0
-	const PROTECTED_BY_MIST   ; 1
-	const GETTING_PUMPED      ; 2 ; Focus Energy
-	const_skip                ; 3 ; unused
-	const HAS_SUBSTITUTE_UP   ; 4
-	const NEEDS_TO_RECHARGE   ; 5 ; Hyper Beam
-	const USING_RAGE          ; 6
-	const SEEDED              ; 7
+	const USING_X_ACCURACY        ; 0
+	const PROTECTED_BY_MIST       ; 1
+	const GETTING_PUMPED          ; 2 ; Focus Energy
+	const_skip                    ; 3 ; unused
+	const HAS_SUBSTITUTE_UP       ; 4
+	const NEEDS_TO_RECHARGE       ; 5 ; Hyper Beam
+	const USING_RAGE              ; 6
+	const SEEDED                  ; 7
 
 ; wPlayerBattleStatus3 or wEnemyBattleStatus3 bit flags
 	const_def

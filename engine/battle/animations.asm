@@ -1156,7 +1156,7 @@ AnimationShakeScreenHorizontallyFast:
 AnimationWaterDropletsEverywhere:
 ; Draws water droplets all over the screen and makes them
 ; scroll. It's hard to describe, but it's the main animation
-; in Surf/Mist/Toxic.
+; in Surf/Icy Mist/Toxic/Haze.
 	xor a
 	ld [wWhichBattleAnimTileset], a
 	call LoadMoveAnimationTiles

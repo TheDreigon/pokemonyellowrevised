@@ -259,7 +259,7 @@ _CoinsScatteredText::
 	prompt
 
 _SuckedHealthText::
-	text "Sucked health from"
+	text "Drained health from"
 	line "<TARGET>!"
 	prompt
 

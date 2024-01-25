@@ -1039,7 +1039,7 @@ _CuboneDexEntry::
 	dex
 
 _MarowakDexEntry::
-	text "Small and weak,"
+	text "Small and lonely,"
 	next "this #MON is"
 	next "adept with its"
 

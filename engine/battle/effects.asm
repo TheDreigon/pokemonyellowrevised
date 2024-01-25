@@ -58,14 +58,14 @@ SleepEffect:
 .setSleepCounter
 ; set target's sleep counter to a random number between 1 and 7
 	call BattleRandom
-	and $7
+	and $7 ; seems like this is the maximum number of sleep turns
 	jr z, .setSleepCounter
 	ld b, a
 	ld a, [wUnknownSerialFlag_d499]
 	and a
 	jr z, .asm_3f1ba ; XXX stadium stuff?
 	ld a, b
-	and $3
+	and $3 ; not sure what this is
 	jr z, .setSleepCounter
 	ld b, a
 .asm_3f1ba
@@ -531,11 +531,11 @@ UpdateStatDone:
 	ldh a, [hWhoseTurn]
 	and a
 	call z, ApplyBadgeStatBoosts ; whenever the player uses a stat-up move, badge boosts get reapplied again to every stat,
-	                             ; even to those not affected by the stat-up move (will be boosted further)
+	                             ; even to those not affected by the stat-up move (will be boosted further) ; TODO
 	ld hl, MonsStatsRoseText
 	call PrintText
 
-; these shouldn't be here
+; these shouldn't be here ; TODO
 	call QuarterSpeedDueToParalysis ; apply speed penalty to the player whose turn is not, if it's paralyzed
 	jp HalveAttackDueToBurn ; apply attack penalty to the player whose turn is not, if it's burned
 
@@ -721,13 +721,13 @@ UpdateLoweredStatDone:
 	ldh a, [hWhoseTurn]
 	and a
 	call nz, ApplyBadgeStatBoosts ; whenever the player uses a stat-down move, badge boosts get reapplied again to every stat,
-	                              ; even to those not affected by the stat-up move (will be boosted further)
+	                              ; even to those not affected by the stat-up move (will be boosted further) ; TODO
 	ld hl, MonsStatsFellText
 	call PrintText
 
 ; These where probably added given that a stat-down move affecting speed or attack will override
 ; the stat penalties from paralysis and burn respectively.
-; But they are always called regardless of the stat affected by the stat-down move.
+; But they are always called regardless of the stat affected by the stat-down move. ; TODO
 	call QuarterSpeedDueToParalysis
 	jp HalveAttackDueToBurn
 
@@ -1018,7 +1018,7 @@ FlinchSideEffect:
 	call z, ClearHyperBeam
 	ld a, [de]
 	cp FLINCH_SIDE_EFFECT1
-	ld b, 10 percent + 1 ; chance of flinch (FLINCH_SIDE_EFFECT1)
+	ld b, 15 percent + 1 ; chance of flinch (FLINCH_SIDE_EFFECT1)
 	jr z, .gotEffectChance
 	ld b, 30 percent + 1 ; chance of flinch otherwise
 .gotEffectChance
@@ -1167,7 +1167,7 @@ RecoilEffect:
 
 ConfusionSideEffect:
 	call BattleRandom
-	cp 10 percent ; chance of confusion
+	cp 20 percent ; chance of confusion
 	ret nc
 	jr ConfusionSideEffectSuccess
 

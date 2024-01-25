@@ -1,7 +1,7 @@
 MoveSoundTable:
 	table_width 3, MoveSoundTable
 	; ID, pitch mod, tempo mod
-	db SFX_POUND,              $00, $80 ; POUND
+	db SFX_BUG_BITE,           $00, $80 ; BUG_BITE
 	db SFX_BATTLE_0C,          $10, $80 ; KARATE_CHOP
 	db SFX_DOUBLESLAP,         $00, $80 ; DOUBLESLAP
 	db SFX_BATTLE_0B,          $01, $80 ; COMET_PUNCH
@@ -21,9 +21,9 @@ MoveSoundTable:
 	db SFX_BATTLE_13,          $00, $e0 ; WHIRLWIND
 	db SFX_NOT_VERY_EFFECTIVE, $20, $c0 ; FLY
 	db SFX_BATTLE_14,          $00, $80 ; BIND
-	db SFX_BATTLE_22,          $00, $80 ; SLAM
+	db SFX_BATTLE_22,          $00, $80 ; DRAGON_SLAM
 	db SFX_VINE_WHIP,          $01, $80 ; VINE_WHIP
-	db SFX_BATTLE_20,          $00, $80 ; STOMP
+	db SFX_BATTLE_20,          $00, $80 ; GROUND_STOMP
 	db SFX_BATTLE_17,          $f0, $40 ; DOUBLE_KICK
 	db SFX_SUPER_EFFECTIVE,    $00, $80 ; MEGA_KICK
 	db SFX_BATTLE_17,          $00, $80 ; JUMP_KICK
@@ -54,7 +54,7 @@ MoveSoundTable:
 	db SFX_BATTLE_2A,          $80, $c0 ; ACID
 	db SFX_BATTLE_19,          $10, $a0 ; EMBER
 	db SFX_BATTLE_19,          $21, $e0 ; FLAMETHROWER
-	db SFX_BATTLE_29,          $00, $80 ; MIST
+	db SFX_BATTLE_29,          $00, $80 ; ICY_MIST
 	db SFX_BATTLE_24,          $20, $60 ; WATER_GUN
 	db SFX_BATTLE_2A,          $00, $80 ; HYDRO_PUMP
 	db SFX_BATTLE_2C,          $00, $80 ; SURF

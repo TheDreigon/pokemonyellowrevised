@@ -25,7 +25,7 @@ InitBattleVariables:
 	ld [hli], a
 	dec b
 	jr nz, .loop
-	inc a ; POUND
+	inc a ; BUG_BITE ; used to be 'POUND' written here.
 	ld [wTestBattlePlayerSelectedMove], a
 	ld a, [wCurMap]
 	cp SAFARI_ZONE_EAST

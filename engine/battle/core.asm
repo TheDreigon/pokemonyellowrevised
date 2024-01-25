@@ -6113,7 +6113,7 @@ CheckEnemyStatusConditions:
 	xor a
 	ld [wAnimationType], a
 	ldh [hWhoseTurn], a
-	ld a, POUND
+	ld a, BUG_BITE ; used to be 'POUND', here ; TODO: test
 	call PlayMoveAnimation
 	ld a, $1
 	ldh [hWhoseTurn], a

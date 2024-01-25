@@ -6,7 +6,7 @@
 ; - MoveSoundTable (see data/moves/sfx.asm)
 	const_def
 	const NO_MOVE      ; 00
-	const POUND        ; 01
+	const BUG_BITE     ; 01
 	const KARATE_CHOP  ; 02
 	const DOUBLESLAP   ; 03
 	const COMET_PUNCH  ; 04
@@ -28,7 +28,7 @@
 	const BIND         ; 14
 	const SLAM         ; 15
 	const VINE_WHIP    ; 16
-	const STOMP        ; 17
+	const GROUND_STOMP ; 17
 	const DOUBLE_KICK  ; 18
 	const MEGA_KICK    ; 19
 	const JUMP_KICK    ; 1a
@@ -59,7 +59,7 @@
 	const ACID         ; 33
 	const EMBER        ; 34
 	const FLAMETHROWER ; 35
-	const MIST         ; 36
+	const ICY_MIST     ; 36
 	const WATER_GUN    ; 37
 	const HYDRO_PUMP   ; 38
 	const SURF         ; 39

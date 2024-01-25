@@ -1,6 +1,6 @@
 MoveNames::
 	list_start MoveNames
-	li "POUND"
+	li "BUG BITE"
 	li "KARATE CHOP"
 	li "DOUBLESLAP"
 	li "COMET PUNCH"
@@ -20,9 +20,9 @@ MoveNames::
 	li "WHIRLWIND"
 	li "FLY"
 	li "BIND"
-	li "SLAM"
+	li "DRAGON SLAM"
 	li "VINE WHIP"
-	li "STOMP"
+	li "GROUND STOMP"
 	li "DOUBLE KICK"
 	li "MEGA KICK"
 	li "JUMP KICK"
@@ -53,7 +53,7 @@ MoveNames::
 	li "ACID"
 	li "EMBER"
 	li "FLAMETHROWER"
-	li "MIST"
+	li "ICY MIST"
 	li "WATER GUN"
 	li "HYDRO PUMP"
 	li "SURF"

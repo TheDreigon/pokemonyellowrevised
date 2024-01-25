@@ -32,3 +32,6 @@
 *.sn*
 *.sa*
 *.sg1
+
+# folders
+resources

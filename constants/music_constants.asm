@@ -186,7 +186,7 @@ DEF BATTLE_SFX_START EQUS "SFX_PECK"
 	music_const SFX_PECK,               SFX_Peck
 	music_const SFX_FAINT_FALL,         SFX_Faint_Fall
 	music_const SFX_BATTLE_09,          SFX_Battle_09
-	music_const SFX_POUND,              SFX_Pound
+	music_const SFX_BUG_BITE,           SFX_Bug_Bite
 	music_const SFX_BATTLE_0B,          SFX_Battle_0B
 	music_const SFX_BATTLE_0C,          SFX_Battle_0C
 	music_const SFX_BATTLE_0D,          SFX_Battle_0D

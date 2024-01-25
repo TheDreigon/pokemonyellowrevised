@@ -1,6 +1,6 @@
 AttackAnimationPointers:
 	table_width 2, AttackAnimationPointers
-	dw PoundAnim
+	dw BugBiteAnim
 	dw KarateChopAnim
 	dw DoubleSlapAnim
 	dw CometPunchAnim
@@ -20,9 +20,9 @@ AttackAnimationPointers:
 	dw WhirlwindAnim
 	dw FlyAnim
 	dw BindAnim
-	dw SlamAnim
+	dw DragonSlamAnim
 	dw VineWhipAnim
-	dw StompAnim
+	dw GroundStompAnim
 	dw DoubleKickAnim
 	dw MegaKickAnim
 	dw JumpKickAnim
@@ -53,7 +53,7 @@ AttackAnimationPointers:
 	dw AcidAnim
 	dw EmberAnim
 	dw FlamethrowerAnim
-	dw MistAnim
+	dw IcyMistAnim
 	dw WaterGunAnim
 	dw HydroPumpAnim
 	dw SurfAnim
@@ -227,9 +227,9 @@ ENDM
 ; The 0 or 1 in the name of a subanim indicates whether to use tileset 0 or 1.
 ; "Both" indicates either can be used for different images using the same animation.
 
-PoundAnim:
+BugBiteAnim:
 StruggleAnim:
-	battle_anim POUND, SUBANIM_0_STAR_TWICE, 0, 8
+	battle_anim BUG_BITE, SUBANIM_0_STAR_TWICE, 0, 8
 	db -1 ; end
 
 KarateChopAnim:
@@ -251,7 +251,7 @@ MegaPunchAnim:
 	db -1 ; end
 
 PayDayAnim:
-	battle_anim POUND, SUBANIM_0_STAR_TWICE, 0, 8
+	battle_anim BUG_BITE, SUBANIM_0_STAR_TWICE, 0, 8
 	battle_anim PAY_DAY, SUBANIM_0_COIN_BOUNCE, 0, 4
 	db -1 ; end
 
@@ -310,7 +310,7 @@ WingAttackAnim:
 
 WhirlwindAnim:
 	battle_anim WHIRLWIND, SUBANIM_1_TORNADO, 1, 6
-	battle_anim NO_MOVE, SE_SLIDE_ENEMY_MON_OFF
+	; battle_anim NO_MOVE, SE_SLIDE_ENEMY_MON_OFF ; no longer used
 	db -1 ; end
 
 FlyAnim:
@@ -319,12 +319,15 @@ FlyAnim:
 	db -1 ; end
 
 BindAnim:
-	battle_anim BIND, SUBANIM_0_BIND, 0, 4
-	battle_anim BIND, SUBANIM_0_BIND, 0, 4
+	battle_anim BIND, SUBANIM_0_BIND, 0, 12
+	battle_anim BIND, SUBANIM_0_BIND, 0, 12
 	db -1 ; end
 
-SlamAnim:
-	battle_anim SLAM, SUBANIM_0_STAR_THRICE, 0, 6
+DragonSlamAnim: ; TODO: test
+	;battle_anim DRAGON_SLAM, SUBANIM_0_STAR_THRICE, 0, 6 ; used to be only this line
+	battle_anim LEER, SE_DARK_SCREEN_FLASH
+    battle_anim LEER, SE_DARK_SCREEN_FLASH
+    battle_anim HEADBUTT, SUBANIM_1_STAR_BIG, 1, 6
 	db -1 ; end
 
 VineWhipAnim:
@@ -332,8 +335,9 @@ VineWhipAnim:
 	battle_anim NO_MOVE, SUBANIM_0_STAR_TWICE, 0, 8
 	db -1 ; end
 
-StompAnim:
-	battle_anim STOMP, SUBANIM_1_STAR_BIG, 1, 8
+GroundStompAnim:
+	battle_anim GROUND_STOMP, SUBANIM_1_STAR_BIG, 1, 8
+	battle_anim GROUND_STOMP, SUBANIM_1_STAR_BIG, 1, 8
 	db -1 ; end
 
 DoubleKickAnim:
@@ -393,9 +397,9 @@ BodySlamAnim:
 	db -1 ; end
 
 WrapAnim:
-	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
-	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
-	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
+	battle_anim WRAP, SUBANIM_0_BIND, 0, 8
+	battle_anim WRAP, SUBANIM_0_BIND, 0, 8
+	battle_anim WRAP, SUBANIM_0_BIND, 0, 8
 	db -1 ; end
 
 TakeDownAnim:
@@ -474,7 +478,7 @@ SupersonicAnim:
 SonicBoomAnim:
 	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
 	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
-	battle_anim GUST, SUBANIM_1_TORNADO, 1, 6
+	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 6
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG, 1, 6
 	db -1 ; end
 
@@ -498,11 +502,12 @@ FlamethrowerAnim:
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_BEAM, 1, 6
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_1, 1, 6
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_2, 1, 6
+	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_3, 1, 6 ; TODO: test
 	db -1 ; end
 
-MistAnim:
+IcyMistAnim:
 	battle_anim NO_MOVE, SE_LIGHT_SCREEN_PALETTE
-	battle_anim SURF, SE_WATER_DROPLETS_EVERYWHERE
+	battle_anim CONFUSE_RAY, SE_WATER_DROPLETS_EVERYWHERE
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
@@ -946,7 +951,9 @@ ClampAnim:
 	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 6
 	db -1 ; end
 
-SwiftAnim:
+SwiftAnim: ; TODO: test
+    battle_anim LEER, SE_DARK_SCREEN_FLASH
+    battle_anim LEER, SE_DARK_SCREEN_FLASH
 	battle_anim SWIFT, SUBANIM_1_STARS_SMALL_TOSS, 1, 3
 	db -1 ; end
 
@@ -959,9 +966,8 @@ SpikeCannonAnim:
 	db -1 ; end
 
 ConstrictAnim:
-	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 6
-	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 6
-	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 6
+	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 4
+	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 4
 	db -1 ; end
 
 AmnesiaAnim:
@@ -1110,10 +1116,15 @@ SharpenAnim:
 	db -1 ; end
 
 ConversionAnim:
-	battle_anim CONVERSION, SE_DARK_SCREEN_FLASH
-	battle_anim NO_MOVE, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 1, 6
-	battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 1, 6
-	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+	;battle_anim CONVERSION, SE_DARK_SCREEN_FLASH
+	;battle_anim NO_MOVE, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 1, 6
+	;battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 1, 6
+	;battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+	; commented above and make it identical to Sharpen's animation.
+	battle_anim SHARPEN, SE_LIGHT_SCREEN_PALETTE
+    battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_CLOSING, 1, 6
+    battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+    battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
 TriAttackAnim:
