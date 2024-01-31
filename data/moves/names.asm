@@ -67,7 +67,7 @@ MoveNames::
 	li "DRILL PECK"
 	li "SUBMISSION"
 	li "LOW KICK"
-	li "COUNTER"
+	li "SHADOW BALL"
 	li "SEISMIC TOSS"
 	li "STRENGTH"
 	li "ABSORB"

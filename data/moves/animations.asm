@@ -67,7 +67,7 @@ AttackAnimationPointers:
 	dw DrillPeckAnim
 	dw SubmissionAnim
 	dw LowKickAnim
-	dw CounterAnim
+	dw ShadowBallAnim
 	dw SeismicTossAnim
 	dw StrengthAnim
 	dw AbsorbAnim
@@ -580,10 +580,11 @@ LowKickAnim:
 	battle_anim NO_MOVE, SE_SHOW_MON_PIC
 	db -1 ; end
 
-CounterAnim:
-	battle_anim COUNTER, SE_SLIDE_MON_OFF
-	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_MOVING, 1, 6
-	battle_anim NO_MOVE, SE_SHOW_MON_PIC
+ShadowBallAnim: TODO: test
+    battle_anim CONFUSE_RAY, SE_DARK_SCREEN_PALETTE
+    battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_TOSS, 1, 4
+	battle_anim NO_MOVE, SE_WAVY_SCREEN
+    battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
 SeismicTossAnim:
@@ -836,7 +837,7 @@ SmokeScreenAnim:
 
 ConfuseRayAnim:
 	battle_anim CONFUSE_RAY, SE_DARK_SCREEN_PALETTE
-	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_TOSS, 1, 6
+	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_TOSS, 1, 8
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
@@ -951,9 +952,7 @@ ClampAnim:
 	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 6
 	db -1 ; end
 
-SwiftAnim: ; TODO: test
-    battle_anim LEER, SE_DARK_SCREEN_FLASH
-    battle_anim LEER, SE_DARK_SCREEN_FLASH
+SwiftAnim:
 	battle_anim SWIFT, SUBANIM_1_STARS_SMALL_TOSS, 1, 3
 	db -1 ; end
 
@@ -1120,7 +1119,7 @@ ConversionAnim:
 	;battle_anim NO_MOVE, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 1, 6
 	;battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 1, 6
 	;battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
-	; commented above and make it identical to Sharpen's animation.
+	; commented above and made it identical to Sharpen's animation.
 	battle_anim SHARPEN, SE_LIGHT_SCREEN_PALETTE
     battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_CLOSING, 1, 6
     battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
