@@ -15,9 +15,10 @@ _MrPsychicsHouseMrPsychicReceivedTM29Text::
 _MrPsychicsHouseMrPsychicTM29ExplanationText::
 	text "TM29 is PSYCHIC!"
 
-	para "It can lower the"
-	line "target's SPECIAL"
-	cont "abilities."
+	para "It's a powerful"
+	line "psychic type move"
+	cont "that can confuse"
+	cont "the target!"
 	done
 
 _MrPsychicsHouseMrPsychicTM29NoRoomText::

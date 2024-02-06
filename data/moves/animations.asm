@@ -281,7 +281,8 @@ VicegripAnim:
 	db -1 ; end
 
 GuillotineAnim:
-	battle_anim GUILLOTINE, SUBANIM_0_SLICE_BOTH_SIDES, 0, 6
+    battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+	battle_anim GUILLOTINE, SUBANIM_0_SLICE_BOTH_SIDES, 0, 12
 	db -1 ; end
 
 RazorWindAnim:
@@ -323,11 +324,11 @@ BindAnim:
 	battle_anim BIND, SUBANIM_0_BIND, 0, 12
 	db -1 ; end
 
-DragonSlamAnim: ; TODO: test
+DragonSlamAnim:
 	;battle_anim DRAGON_SLAM, SUBANIM_0_STAR_THRICE, 0, 6 ; used to be only this line
-	battle_anim LEER, SE_DARK_SCREEN_FLASH
-    battle_anim LEER, SE_DARK_SCREEN_FLASH
-    battle_anim HEADBUTT, SUBANIM_1_STAR_BIG, 1, 6
+	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+    battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+    battle_anim DRAGON_SLAM, SUBANIM_0_STAR_THRICE, 0, 12
 	db -1 ; end
 
 VineWhipAnim:
@@ -336,8 +337,8 @@ VineWhipAnim:
 	db -1 ; end
 
 GroundStompAnim:
-	battle_anim GROUND_STOMP, SUBANIM_1_STAR_BIG, 1, 8
-	battle_anim GROUND_STOMP, SUBANIM_1_STAR_BIG, 1, 8
+	battle_anim GROUND_STOMP, SUBANIM_1_STAR_BIG, 1, 12
+	battle_anim GROUND_STOMP, SUBANIM_1_STAR_BIG, 1, 12
 	db -1 ; end
 
 DoubleKickAnim:
@@ -378,6 +379,7 @@ FuryAttackAnim:
 
 HornDrillAnim:
 	battle_anim HORN_DRILL, SUBANIM_1_STAR_BIG, 1, 2
+	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG, 1, 2
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG, 1, 2
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG, 1, 2
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG, 1, 2
