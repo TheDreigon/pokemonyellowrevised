@@ -26,7 +26,7 @@
 	const WHIRLWIND    ; 12
 	const FLY          ; 13
 	const BIND         ; 14
-	const SLAM         ; 15
+	const DRAGON_SLAM  ; 15
 	const VINE_WHIP    ; 16
 	const GROUND_STOMP ; 17
 	const DOUBLE_KICK  ; 18
@@ -73,7 +73,7 @@
 	const DRILL_PECK   ; 41
 	const SUBMISSION   ; 42
 	const LOW_KICK     ; 43
-	const COUNTER      ; 44
+	const SHADOW_BALL  ; 44
 	const SEISMIC_TOSS ; 45
 	const STRENGTH     ; 46
 	const ABSORB       ; 47
