@@ -387,17 +387,17 @@ MainInBattleLoop:
 	ld a, [wEnemySelectedMove]
 	cp QUICK_ATTACK
 	jr z, .enemyMovesFirst ; if enemy used Quick Attack and player didn't
-	ld a, [wPlayerSelectedMove]
-	cp COUNTER
-	jr nz, .playerDidNotUseCounter
-	ld a, [wEnemySelectedMove]
-	cp COUNTER
-	jr z, .compareSpeed ; if both used Counter
-	jr .enemyMovesFirst ; if player used Counter and enemy didn't
-.playerDidNotUseCounter
-	ld a, [wEnemySelectedMove]
-	cp COUNTER
-	jr z, .playerMovesFirst ; if enemy used Counter and player didn't
+	; ld a, [wPlayerSelectedMove]
+	; cp COUNTER
+	; jr nz, .playerDidNotUseCounter
+	; ld a, [wEnemySelectedMove]
+	; cp COUNTER
+	; jr z, .compareSpeed ; if both used Counter
+	; jr .enemyMovesFirst ; if player used Counter and enemy didn't
+; .playerDidNotUseCounter
+	; ld a, [wEnemySelectedMove]
+	; cp COUNTER
+	; jr z, .playerMovesFirst ; if enemy used Counter and player didn't
 .compareSpeed
 	ld de, wBattleMonSpeed ; player speed value
 	ld hl, wEnemyMonSpeed ; enemy speed value
@@ -426,7 +426,7 @@ MainInBattleLoop:
 	jr c, .AIActionUsedEnemyFirst
 	call ExecuteEnemyMove
 	ld a, [wEscapedFromBattle]
-	and a ; was Teleport, Road, or Whirlwind used to escape from battle?
+	and a ; was Teleport, Roar, or Whirlwind used to escape from battle?
 	ret nz ; if so, return
 	ld a, b
 	and a
@@ -437,7 +437,7 @@ MainInBattleLoop:
 	call DrawHUDsAndHPBars
 	call ExecutePlayerMove
 	ld a, [wEscapedFromBattle]
-	and a ; was Teleport, Road, or Whirlwind used to escape from battle?
+	and a ; was Teleport, Roar, or Whirlwind used to escape from battle?
 	ret nz ; if so, return
 	ld a, b
 	and a
@@ -450,7 +450,7 @@ MainInBattleLoop:
 .playerMovesFirst
 	call ExecutePlayerMove
 	ld a, [wEscapedFromBattle]
-	and a ; was Teleport, Road, or Whirlwind used to escape from battle?
+	and a ; was Teleport, Roar, or Whirlwind used to escape from battle?
 	ret nz ; if so, return
 	ld a, b
 	and a
@@ -464,7 +464,7 @@ MainInBattleLoop:
 	jr c, .AIActionUsedPlayerFirst
 	call ExecuteEnemyMove
 	ld a, [wEscapedFromBattle]
-	and a ; was Teleport, Road, or Whirlwind used to escape from battle?
+	and a ; was Teleport, Roar, or Whirlwind used to escape from battle?
 	ret nz ; if so, return
 	ld a, b
 	and a
@@ -4765,7 +4765,7 @@ JumpToOHKOMoveEffect:
 	dec a
 	ret
 
-INCLUDE "data/battle/unused_critical_hit_moves.asm"
+INCLUDE "data/battle/critical_hit_moves.asm"
 
 ; determines if attack is a critical hit
 ; Azure Heights claims "the fastest pokémon (who are, not coincidentally,
@@ -4836,8 +4836,6 @@ CriticalHitTest:
 	ld [wCriticalHitOrOHKO], a   ; set critical hit flag
 	ret
 
-INCLUDE "data/battle/critical_hit_moves.asm"
-
 ; function to determine if Counter hits and if so, how much damage it does
 HandleCounterMove:
 ; The variables checked by Counter are updated whenever the cursor points to a new move in the battle selection menu.
@@ -4858,13 +4856,13 @@ HandleCounterMove:
 	ld de, wPlayerMovePower
 	ld a, [wEnemySelectedMove]
 .next
-	cp COUNTER
-	ret nz ; return if not using Counter
-	ld a, $01
-	ld [wMoveMissed], a ; initialize the move missed variable to true (it is set to false below if the move hits)
-	ld a, [hl]
-	cp COUNTER
-	ret z ; miss if the opponent's last selected move is Counter.
+	; cp COUNTER
+	; ret nz ; return if not using Counter
+	; ld a, $01
+	; ld [wMoveMissed], a ; initialize the move missed variable to true (it is set to false below if the move hits)
+	; ld a, [hl]
+	; cp COUNTER
+	; ret z ; miss if the opponent's last selected move is Counter.
 	ld a, [de]
 	and a
 	ret z ; miss if the opponent's last selected move's Base Power is 0.

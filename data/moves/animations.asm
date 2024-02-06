@@ -580,7 +580,7 @@ LowKickAnim:
 	battle_anim NO_MOVE, SE_SHOW_MON_PIC
 	db -1 ; end
 
-ShadowBallAnim: TODO: test
+ShadowBallAnim: ; TODO: test
     battle_anim CONFUSE_RAY, SE_DARK_SCREEN_PALETTE
     battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_TOSS, 1, 4
 	battle_anim NO_MOVE, SE_WAVY_SCREEN
@@ -1230,7 +1230,7 @@ ShrinkingSquareBlackAnim:
 
 UnusedAnim:
 	battle_anim NO_MOVE, SE_LIGHT_SCREEN_PALETTE
-	battle_anim NO_MOVE, SE_SHOOT_MANY_BALLS_UPWARD
+	battle_anim NO_MOVE, SE_SHOOT_MANY_BALLS_UPWARD ; TODO: check this animation out.
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
