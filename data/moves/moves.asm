@@ -38,7 +38,7 @@ Moves:
 	move MEGA_KICK,    NO_ADDITIONAL_EFFECT,        90, FIGHTING,      85, 10
 	move JUMP_KICK,    JUMP_KICK_EFFECT,            80, FIGHTING,      95, 20
 	move ROLLING_KICK, FLINCH_SIDE_EFFECT2,         65, FIGHTING,      95, 15 ; hitmonlee signaturer
-	move SAND_ATTACK,  ACCURACY_DOWN1_EFFECT,        0, GROUND,       100, 15
+	move SAND_ATTACK,  ACCURACY_DOWN1_EFFECT,        0, GROUND,       100, 15 ; TODO: give it damage, like mud-slap (see tutorial).
 	move HEADBUTT,     FLINCH_SIDE_EFFECT2,         50, NORMAL,       100, 20 ; pokemon learns either Bite or Headbutt.
 	move HORN_ATTACK,  NO_ADDITIONAL_EFFECT,        60, NORMAL,        95, 25
 	move FURY_ATTACK,  TWO_TO_FIVE_ATTACKS_EFFECT,  17, NORMAL,        80, 20
@@ -64,7 +64,7 @@ Moves:
 	move ACID,         DEFENSE_DOWN1_EFFECT,        60, POISON,       100, 25 ; replaced 'DEFENSE_DOWN_SIDE_EFFECT' with 'DEFENSE_DOWN1_EFFECT'.
 	move EMBER,        BURN_SIDE_EFFECT1,           40, FIRE,         100, 25
 	move FLAMETHROWER, BURN_SIDE_EFFECT1,           90, FIRE,         100, 15
-	move ICY_MIST,     SPEED_DOWN_SIDE_EFFECT,      40, ICE,          100, 25 ; replaced 'MIST_EFFECT' with 'SPEED_DOWN_SIDE_EFFECT'. TODO: test damage animation.
+	move ICY_MIST,     SPEED_DOWN_SIDE_EFFECT,      40, ICE,          100, 25 ; replaced 'MIST_EFFECT' with 'SPEED_DOWN_SIDE_EFFECT'.
 	move WATER_GUN,    NO_ADDITIONAL_EFFECT,        40, WATER,        100, 25
 	move HYDRO_PUMP,   SPEED_DOWN1_EFFECT,         120, WATER,         80,  5 ; replaced 'NO_ADDITIONAL_EFFECT' with 'SPEED_DOWN1_EFFECT'.
 	move SURF,         SPEED_DOWN_SIDE_EFFECT,      90, WATER,        100, 15 ; replaced 'NO_ADDITIONAL_EFFECT' with 'SPEED_DOWN_SIDE_EFFECT'.
@@ -73,12 +73,12 @@ Moves:
 	move PSYBEAM,      SPECIAL_DOWN_SIDE_EFFECT,    65, PSYCHIC_TYPE, 100, 20 ; replaced 'CONFUSION_SIDE_EFFECT' with 'SPECIAL_DOWN_SIDE_EFFECT'.
 	move BUBBLEBEAM,   SPEED_DOWN_SIDE_EFFECT,      65, WATER,        100, 20
 	move AURORA_BEAM,  SPECIAL_DOWN_SIDE_EFFECT,    65, ICE,          100, 20 ; replaced 'ATTACK_DOWN_SIDE_EFFECT' with 'SPECIAL_DOWN_SIDE_EFFECT'.
-	move HYPER_BEAM,   HYPER_BEAM_EFFECT,          125, DRAGON,        90,  5 ; dragonite, gyarados, mewtwo. TODO: note: "In Generations 1-3, all Dragon type moves were categorized as Special".
+	move HYPER_BEAM,   HYPER_BEAM_EFFECT,          125, DRAGON,        90,  5 ; dragonite, gyarados, mewtwo.
 	move PECK,         NO_ADDITIONAL_EFFECT,        35, FLYING,       100, 30
 	move DRILL_PECK,   DEFENSE_DOWN1_EFFECT,        80, FLYING,       100, 20 ; replaced 'NO_ADDITIONAL_EFFECT' with 'DEFENSE_DOWN1_EFFECT'.
 	move SUBMISSION,   ATTACK_DOWN1_EFFECT,        100, FIGHTING,      90, 20 ; replaced 'RECOIL_EFFECT' with 'ATTACK_DOWN1_EFFECT'.
 	move LOW_KICK,     FLINCH_SIDE_EFFECT2,         50, FIGHTING,      90, 20
-	move SHADOW_BALL,  SPECIAL_DOWN_SIDE_EFFECT,    70, GHOST,        100, 25 ; replaced 'NO_ADDITIONAL_EFFECT' with 'SPECIAL_DOWN_SIDE_EFFECT'. gastly-line and maybe marowak. TODO: test move animation.
+	move SHADOW_BALL,  SPECIAL_DOWN_SIDE_EFFECT,    70, GHOST,        100, 25 ; replaced 'NO_ADDITIONAL_EFFECT' with 'SPECIAL_DOWN_SIDE_EFFECT'. gastly-line and maybe marowak.
 	move SEISMIC_TOSS, SPECIAL_DAMAGE_EFFECT,        1, FIGHTING,     100, 20
 	move STRENGTH,     ATTACK_UP1_EFFECT,           60, FIGHTING,     100, 20 ; replaced 'NO_ADDITIONAL_EFFECT' with 'ATTACK_UP1_EFFECT'. machop-line learns naturally.
 	move ABSORB,       DRAIN_HP_EFFECT,             30, GRASS,        100, 20
@@ -132,7 +132,7 @@ Moves:
 	move MIRROR_MOVE,  MIRROR_MOVE_EFFECT,           0, NORMAL,       100, 20 ; TODO: maybe change into something more useful/consistent?
 	move SELFDESTRUCT, EXPLODE_EFFECT,             130, NORMAL,       100,  5
 	move EGG_BOMB,     NO_ADDITIONAL_EFFECT,        90, GRASS,         90, 10 ; exeggute, chansey.
-	move LICK,         PARALYZE_SIDE_EFFECT2,       30, GHOST,        100, 20 ; give to jynx. TODO: In generation 1, Ghost type was categorised as Physical - make it Special. And Dragon Special -> Physical.
+	move LICK,         PARALYZE_SIDE_EFFECT2,       30, GHOST,        100, 20 ; give to jynx.
 	move SMOG,         POISON_SIDE_EFFECT1,         35, POISON,       100, 25 ; koffing signature move.
 	move SLUDGE,       POISON_SIDE_EFFECT2,         90, POISON,       100, 15 ; muk
 	move BONE_CLUB,    FLINCH_SIDE_EFFECT1,         65, GROUND,       100, 20
@@ -144,11 +144,11 @@ Moves:
 	move SPIKE_CANNON, TWO_TO_FIVE_ATTACKS_EFFECT,  18, ROCK,          80, 20 ; cloyster, omastar, sandslash.
 	move CONSTRICT,    SPEED_DOWN1_EFFECT,          30, BUG,          100, 25 ; Pinsir, Tangela, Victreebell.
 	move AMNESIA,      SPECIAL_UP1_EFFECT,           0, NORMAL,       100, 25 ; temporarily replaced 'SPECIAL_UP2_EFFECT' with 'SPECIAL_UP1_EFFECT', until possible special split.
-	move KINESIS,      ACCURACY_DOWN1_EFFECT,       30, PSYCHIC_TYPE, 100, 20
+	move KINESIS,      ACCURACY_DOWN1_EFFECT,       30, PSYCHIC_TYPE, 100, 20 ; see tutorial. related to sand-attack.
 	move SOFTBOILED,   HEAL_EFFECT,                  0, NORMAL,       100, 20
 	move HI_JUMP_KICK, JUMP_KICK_EFFECT,           110, FIGHTING,      80, 10 ; hitmonlee.
 	move GLARE,        PARALYZE_EFFECT,              0, NORMAL,        90, 20
-	move DREAM_EATER,  DREAM_EATER_EFFECT,         100, PSYCHIC_TYPE, 100, 15 ; TODO: maybe change into something more useful/consistent?
+	move DREAM_EATER,  DREAM_EATER_EFFECT,         100, PSYCHIC_TYPE, 100, 15 ; hypno.
 	move POISON_GAS,   POISON_EFFECT,                0, POISON,        70, 20
 	move BARRAGE,      TWO_TO_FIVE_ATTACKS_EFFECT,  18, GRASS,         80, 20 ; exeggute, chansey.
 	move LEECH_LIFE,   DRAIN_HP_EFFECT,             65, BUG,          100, 20 ; golbat
@@ -169,11 +169,12 @@ Moves:
 	move REST,         HEAL_EFFECT,                  0, NORMAL,       100, 20
 	move ROCK_SLIDE,   PARALYZE_SIDE_EFFECT2,       90, ROCK,         100, 15 ; replaced 'NO_ADDITIONAL_EFFECT' with 'PARALYZE_SIDE_EFFECT2'.
 	move HYPER_FANG,   FLINCH_SIDE_EFFECT1,         80, NORMAL,        90, 15
-	move SHARPEN,      ATTACK_UP2_EFFECT,            0, NORMAL,       100, 20 ; replaced 'ATTACK_UP1_EFFECT' with 'ATTACK_UP2_EFFECT'.
-	move CONVERSION,   SPECIAL_UP2_EFFECT,           0, NORMAL,       100, 20 ; replaced 'CONVERSION_EFFECT' with 'SPECIAL_UP2_EFFECT'. TODO: test move animation.
-	move TRI_ATTACK,   ACCURACY_UP1_EFFECT,         90, NORMAL,       100, 15 ; replaced 'NO_ADDITIONAL_EFFECT' with 'ACCURACY_UP1_EFFECT'. Porygon's signature move (and Mewtwo). TODO: test if this effect works.
+	move SHARPEN,      ATTACK_UP2_EFFECT,            0, NORMAL,       100, 20 ; replaced 'ATTACK_UP1_EFFECT' with 'ATTACK_UP2_EFFECT'. Porygon.
+	move CONVERSION,   SPECIAL_UP2_EFFECT,           0, NORMAL,       100, 20 ; replaced 'CONVERSION_EFFECT' with 'SPECIAL_UP2_EFFECT'. Porygon.
+	move TRI_ATTACK,   ACCURACY_UP1_EFFECT,         90, NORMAL,       100, 15 ; replaced 'NO_ADDITIONAL_EFFECT' with 'ACCURACY_UP1_EFFECT'. Porygon, Mewtwo. TODO: test if this effect works.
 	move SUPER_FANG,   SUPER_FANG_EFFECT,            1, NORMAL,        90, 15
 	move SLASH,        NO_ADDITIONAL_EFFECT,        60, NORMAL,       100, 25
 	move SUBSTITUTE,   SUBSTITUTE_EFFECT,            0, NORMAL,       100, 10
+	move COUNTER,      NO_ADDITIONAL_EFFECT,         1, FIGHTING,     100, 20
 	move STRUGGLE,     RECOIL_EFFECT,               50, NORMAL,       100, 10
 	assert_table_length NUM_ATTACKS

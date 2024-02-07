@@ -54,7 +54,7 @@ MoveSoundTable:
 	db SFX_BATTLE_2A,          $80, $c0 ; ACID
 	db SFX_BATTLE_19,          $10, $a0 ; EMBER
 	db SFX_BATTLE_19,          $21, $e0 ; FLAMETHROWER
-	db SFX_BATTLE_29,          $00, $80 ; ICY_MIST
+	db SFX_BATTLE_13,          $f1, $ff ; ICY_MIST
 	db SFX_BATTLE_24,          $20, $60 ; WATER_GUN
 	db SFX_BATTLE_2A,          $00, $80 ; HYDRO_PUMP
 	db SFX_BATTLE_2C,          $00, $80 ; SURF
@@ -68,7 +68,7 @@ MoveSoundTable:
 	db SFX_BATTLE_13,          $f0, $20 ; DRILL_PECK
 	db SFX_BATTLE_23,          $01, $c0 ; SUBMISSION
 	db SFX_BATTLE_23,          $00, $80 ; LOW_KICK
-	db SFX_SUPER_EFFECTIVE,    $00, $e0 ; COUNTER
+	db SFX_BATTLE_13,          $f1, $ff ; SHADOW_BALL
 	db SFX_BATTLE_26,          $01, $60 ; SEISMIC_TOSS
 	db SFX_BATTLE_26,          $20, $40 ; STRENGTH
 	db SFX_BATTLE_24,          $00, $80 ; ABSORB
@@ -165,6 +165,7 @@ MoveSoundTable:
 	db SFX_BATTLE_26,          $f0, $ff ; SUPER_FANG
 	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; SLASH
 	db SFX_BATTLE_2C,          $d8, $04 ; SUBSTITUTE
+	db SFX_SUPER_EFFECTIVE,    $00, $e0 ; COUNTER
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

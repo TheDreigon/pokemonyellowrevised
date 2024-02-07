@@ -164,6 +164,7 @@ AttackAnimationPointers:
 	dw SuperFangAnim
 	dw SlashAnim
 	dw SubstituteAnim
+	dw CounterAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -229,7 +230,7 @@ ENDM
 
 BugBiteAnim:
 StruggleAnim:
-	battle_anim BUG_BITE, SUBANIM_0_STAR_TWICE, 0, 8
+	battle_anim BUG_BITE, SUBANIM_0_STAR_TWICE, 0, 6
 	db -1 ; end
 
 KarateChopAnim:
@@ -237,13 +238,13 @@ KarateChopAnim:
 	db -1 ; end
 
 DoubleSlapAnim:
-	battle_anim DOUBLESLAP, SUBANIM_0_STAR_TWICE, 0, 5
-	battle_anim DOUBLESLAP, SUBANIM_0_STAR_TWICE, 0, 5
+	battle_anim DOUBLESLAP, SUBANIM_0_STAR_TWICE, 0, 4
+	battle_anim DOUBLESLAP, SUBANIM_0_STAR_TWICE, 0, 4
 	db -1 ; end
 
 CometPunchAnim:
-	battle_anim COMET_PUNCH, SUBANIM_0_STAR_THRICE, 0, 4
-	battle_anim COMET_PUNCH, SUBANIM_0_STAR_THRICE, 0, 4
+	battle_anim COMET_PUNCH, SUBANIM_0_STAR_THRICE, 0, 5
+	battle_anim COMET_PUNCH, SUBANIM_0_STAR_THRICE, 0, 5
 	db -1 ; end
 
 MegaPunchAnim:
@@ -325,10 +326,11 @@ BindAnim:
 	db -1 ; end
 
 DragonSlamAnim:
-	;battle_anim DRAGON_SLAM, SUBANIM_0_STAR_THRICE, 0, 6 ; used to be only this line
-	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
     battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
-    battle_anim DRAGON_SLAM, SUBANIM_0_STAR_THRICE, 0, 12
+	battle_anim LEECH_SEED, SE_MOVE_MON_HORIZONTALLY
+    battle_anim GROUND_STOMP, SE_DARK_SCREEN_FLASH
+    battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+    battle_anim NO_MOVE, SE_RESET_MON_POSITION
 	db -1 ; end
 
 VineWhipAnim:
@@ -378,6 +380,7 @@ FuryAttackAnim:
 	db -1 ; end
 
 HornDrillAnim:
+    battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
 	battle_anim HORN_DRILL, SUBANIM_1_STAR_BIG, 1, 2
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG, 1, 2
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG, 1, 2
@@ -504,7 +507,7 @@ FlamethrowerAnim:
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_BEAM, 1, 6
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_1, 1, 6
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_2, 1, 6
-	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_3, 1, 6 ; TODO: test
+	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_3, 1, 6
 	db -1 ; end
 
 IcyMistAnim:
@@ -583,8 +586,9 @@ LowKickAnim:
 	db -1 ; end
 
 ShadowBallAnim: ; TODO: test
-    battle_anim CONFUSE_RAY, SE_DARK_SCREEN_PALETTE
-    battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_TOSS, 1, 4
+    battle_anim NO_MOVE, SE_DARK_SCREEN_PALETTE
+    ;battle_anim CONFUSION, SUBANIM_1_STAR_BIG_TOSS, 1, 2
+    battle_anim PSYBEAM, SUBANIM_1_STAR_BIG_TOSS, 1, 2
 	battle_anim NO_MOVE, SE_WAVY_SCREEN
     battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
@@ -716,6 +720,7 @@ EarthquakeAnim:
 	db -1 ; end
 
 FissureAnim:
+    battle_anim NO_MOVE, SE_SHAKE_SCREEN
 	battle_anim FISSURE, SE_DARK_SCREEN_FLASH
 	battle_anim NO_MOVE, SE_SHAKE_SCREEN
 	battle_anim FISSURE, SE_DARK_SCREEN_FLASH
@@ -839,7 +844,7 @@ SmokeScreenAnim:
 
 ConfuseRayAnim:
 	battle_anim CONFUSE_RAY, SE_DARK_SCREEN_PALETTE
-	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_TOSS, 1, 8
+	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_TOSS, 1, 6
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
@@ -1116,14 +1121,13 @@ SharpenAnim:
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
-ConversionAnim:
+ConversionAnim: ; TODO: test animation.
 	;battle_anim CONVERSION, SE_DARK_SCREEN_FLASH
 	;battle_anim NO_MOVE, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 1, 6
 	;battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 1, 6
 	;battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
-	; commented above and made it identical to Sharpen's animation.
-	battle_anim SHARPEN, SE_LIGHT_SCREEN_PALETTE
-    battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_CLOSING, 1, 6
+	battle_anim CONVERSION, SE_DARK_SCREEN_PALETTE
+    battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_CLOSING, 0, 6
     battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
     battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
@@ -1148,6 +1152,12 @@ SubstituteAnim:
 	battle_anim SUBSTITUTE, SE_SLIDE_MON_OFF
 	battle_anim NO_MOVE, SUBANIM_0_BALL_POOF, 0, 8
 	battle_anim NO_MOVE, SE_SUBSTITUTE_MON
+	db -1 ; end
+
+CounterAnim:
+	battle_anim COUNTER, SE_SLIDE_MON_OFF
+	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_MOVING, 1, 6
+	battle_anim NO_MOVE, SE_SHOW_MON_PIC
 	db -1 ; end
 
 BallTossAnim:
