@@ -326,11 +326,13 @@ BindAnim:
 	db -1 ; end
 
 DragonSlamAnim:
-    battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
-	battle_anim LEECH_SEED, SE_MOVE_MON_HORIZONTALLY
-    battle_anim GROUND_STOMP, SE_DARK_SCREEN_FLASH
-    battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+    battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
+	battle_anim DRAGON_SLAM, SE_MOVE_MON_HORIZONTALLY
+	;battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+    battle_anim MEGA_PUNCH, SUBANIM_1_STAR_BIG_MOVING, 1, 6
     battle_anim NO_MOVE, SE_RESET_MON_POSITION
+    battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
 VineWhipAnim:
@@ -366,7 +368,7 @@ SandAttackAnim:
 	db -1 ; end
 
 HeadButtAnim:
-	battle_anim HEADBUTT, SUBANIM_1_STAR_BIG, 1, 6
+	battle_anim HEADBUTT, SUBANIM_1_STAR_BIG, 1, 8
 	db -1 ; end
 
 HornAttackAnim:
@@ -570,7 +572,7 @@ PeckAnim:
 	db -1 ; end
 
 DrillPeckAnim:
-	battle_anim DRILL_PECK, SUBANIM_1_STAR_BIG_MOVING, 1, 6
+	battle_anim DRILL_PECK, SUBANIM_1_STAR_BIG_MOVING, 1, 8
 	db -1 ; end
 
 SubmissionAnim:
@@ -585,10 +587,9 @@ LowKickAnim:
 	battle_anim NO_MOVE, SE_SHOW_MON_PIC
 	db -1 ; end
 
-ShadowBallAnim: ; TODO: test
+ShadowBallAnim:
     battle_anim NO_MOVE, SE_DARK_SCREEN_PALETTE
-    ;battle_anim CONFUSION, SUBANIM_1_STAR_BIG_TOSS, 1, 2
-    battle_anim PSYBEAM, SUBANIM_1_STAR_BIG_TOSS, 1, 2
+    battle_anim PSYBEAM, SUBANIM_1_STAR_BIG_TOSS, 1, 4
 	battle_anim NO_MOVE, SE_WAVY_SCREEN
     battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
@@ -717,9 +718,11 @@ RockThrowAnim:
 EarthquakeAnim:
 	battle_anim EARTHQUAKE, SE_SHAKE_SCREEN
 	battle_anim EARTHQUAKE, SE_SHAKE_SCREEN
+	battle_anim EARTHQUAKE, SE_SHAKE_SCREEN
 	db -1 ; end
 
 FissureAnim:
+	battle_anim FISSURE, SE_DARK_SCREEN_FLASH
     battle_anim NO_MOVE, SE_SHAKE_SCREEN
 	battle_anim FISSURE, SE_DARK_SCREEN_FLASH
 	battle_anim NO_MOVE, SE_SHAKE_SCREEN
@@ -768,8 +771,10 @@ QuickAttackAnim:
 	battle_anim NO_MOVE, SE_SHOW_MON_PIC
 	db -1 ; end
 
-RageAnim:
-	battle_anim RAGE, SUBANIM_0_STAR_TWICE, 0, 6
+RageAnim: ; TODO: test
+    battle_anim NO_MOVE, SE_LIGHT_SCREEN_PALETTE
+	battle_anim RAGE, SUBANIM_0_STAR_TWICE, 0, 8
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
 TeleportAnim:

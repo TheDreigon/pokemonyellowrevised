@@ -3,6 +3,6 @@ HighCriticalMoves:
 	db SLASH
 	db CUT
 	db RAZOR_WIND
-	db HORN_DRILL
 	db GUILLOTINE
+	db HI_JUMP_KICK
 	db -1 ; end
