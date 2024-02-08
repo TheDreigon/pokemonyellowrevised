@@ -328,7 +328,6 @@ BindAnim:
 DragonSlamAnim:
     battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
 	battle_anim DRAGON_SLAM, SE_MOVE_MON_HORIZONTALLY
-	;battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
 	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
     battle_anim MEGA_PUNCH, SUBANIM_1_STAR_BIG_MOVING, 1, 6
     battle_anim NO_MOVE, SE_RESET_MON_POSITION
