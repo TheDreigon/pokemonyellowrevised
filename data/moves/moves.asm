@@ -36,7 +36,7 @@ Moves:
 	move GROUND_STOMP, SPEED_DOWN_SIDE_EFFECT,      45, GROUND,       100, 30 ; replaced 'FLINCH_SIDE_EFFECT1' with 'SPEED_DOWN_SIDE_EFFECT'.
 	move DOUBLE_KICK,  ATTACK_TWICE_EFFECT,         30, FIGHTING,     100, 20
 	move MEGA_KICK,    NO_ADDITIONAL_EFFECT,        85, FIGHTING,      90, 15 ; TODO: scrap this move, give place to another; Idea: Drain Punch: Hitmonchan's new signature move.
-	move JUMP_KICK,    NO_ADDITIONAL_EFFECT,        85, FIGHTING,      90, 15 ; replaced 'JUMP_KICK_EFFECT' with 'NO_ADDITIONAL_EFFECT'. TODO: scrap this move, give place to another; Idea: Drain Kiss (maybe Psychic type): Jynx's new signature move.
+	move JUMP_KICK,    NO_ADDITIONAL_EFFECT,        85, FIGHTING,      90, 15 ; replaced 'JUMP_KICK_EFFECT' with 'NO_ADDITIONAL_EFFECT'. TODO: scrap this move, give place to another; Idea: Drain Kiss (maybe Psychic type)? Jynx's new signature move.
 	move ROLLING_KICK, FLINCH_SIDE_EFFECT2,         65, FIGHTING,     100, 25 ; hitmonlee's signature move.
 	move SAND_ATTACK,  ACCURACY_DOWN1_EFFECT,        0, GROUND,       100, 15 ; TODO: give it damage, like mud-slap (see tutorial).
 	move HEADBUTT,     FLINCH_SIDE_EFFECT2,         50, NORMAL,       100, 20 ; pokemon learns either Bite or Headbutt.
@@ -48,7 +48,7 @@ Moves:
 	move WRAP,         TRAPPING_EFFECT,             16, GRASS,         80, 20 ; tornei a animação ligeiramente mais lenta/demorada. Tangela, Victreebell, Tentacruel, Lickitung.
 	move TAKE_DOWN,    DEFENSE_DOWN1_EFFECT,        90, NORMAL,       100, 15 ; replaced 'RECOIL_EFFECT' with 'DEFENSE_DOWN1_EFFECT'.
 	move THRASH,       THRASH_PETAL_DANCE_EFFECT,  110, DRAGON,        90,  5
-	move DOUBLE_EDGE,  RECOIL_EFFECT,              120, NORMAL,        80, 10
+	move DOUBLE_EDGE,  RECOIL_EFFECT,              125, NORMAL,        80,  5
 	move TAIL_WHIP,    DEFENSE_DOWN1_EFFECT,         0, NORMAL,       100, 30
 	move POISON_STING, POISON_SIDE_EFFECT1,         35, POISON,       100, 30
 	move TWINEEDLE,    TWINEEDLE_EFFECT,            40, BUG,          100, 20
@@ -80,7 +80,7 @@ Moves:
 	move LOW_KICK,     FLINCH_SIDE_EFFECT2,         45, FIGHTING,      90, 20
 	move SHADOW_BALL,  SPECIAL_DOWN_SIDE_EFFECT,    70, GHOST,        100, 20 ; replaced 'NO_ADDITIONAL_EFFECT' with 'SPECIAL_DOWN_SIDE_EFFECT'. gastly-line and maybe marowak.
 	move SEISMIC_TOSS, SPECIAL_DAMAGE_EFFECT,        1, FIGHTING,     100, 20
-	move STRENGTH,     ATTACK_UP1_EFFECT,           65, FIGHTING,     100, 25 ; replaced 'NO_ADDITIONAL_EFFECT' with 'ATTACK_UP1_EFFECT'. machop-line learns naturally.
+	move STRENGTH,     ATTACK_UP1_EFFECT,           60, FIGHTING,     100, 30 ; replaced 'NO_ADDITIONAL_EFFECT' with 'ATTACK_UP1_EFFECT'. machop-line learns naturally.
 	move ABSORB,       DRAIN_HP_EFFECT,             30, GRASS,        100, 30
 	move MEGA_DRAIN,   DRAIN_HP_EFFECT,             65, GRASS,        100, 20
 	move LEECH_SEED,   LEECH_SEED_EFFECT,            0, GRASS,         90, 15

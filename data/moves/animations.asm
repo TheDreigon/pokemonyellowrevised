@@ -770,7 +770,7 @@ QuickAttackAnim:
 	battle_anim NO_MOVE, SE_SHOW_MON_PIC
 	db -1 ; end
 
-RageAnim: ; TODO: test
+RageAnim:
     battle_anim NO_MOVE, SE_LIGHT_SCREEN_PALETTE
 	battle_anim RAGE, SUBANIM_0_STAR_TWICE, 0, 8
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
