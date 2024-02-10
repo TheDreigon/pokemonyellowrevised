@@ -516,7 +516,16 @@ UpdateStatDone:
 	call nz, Bankswitch
 	pop de
 .notMinimize
-	call PlayCurrentMoveAnimation
+    ldh a, [hWhoseTurn]
+    and a
+    ld a, [wPlayerMovePower]
+    jr z, .gotUsersPower1
+    ld a, [wEnemyMovePower]
+.gotUsersPower1
+    and a ; Skip animation if damage dealing move
+    jr nz, .skipAnimation
+    call PlayCurrentMoveAnimation
+.skipAnimation
 	ld a, [de]
 	cp MINIMIZE
 	jr nz, .applyBadgeBoostsAndStatusPenalties
@@ -716,6 +725,14 @@ UpdateLoweredStatDone:
 	ld a, [de]
 	cp $44
 	jr nc, .ApplyBadgeBoostsAndStatusPenalties
+	ldh a, [hWhoseTurn] ; check who is using the move
+    and a
+    ld a, [wPlayerMovePower]
+    jr z, .gotUsersPower2
+    ld a, [wEnemyMovePower]
+.gotUsersPower2
+    and a ; Skip animation if damage dealing move
+    jr nz, .ApplyBadgeBoostsAndStatusPenalties
 	call PlayCurrentMoveAnimation2
 .ApplyBadgeBoostsAndStatusPenalties
 	ldh a, [hWhoseTurn]
