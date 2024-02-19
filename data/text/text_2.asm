@@ -1242,10 +1242,10 @@ _BuildingRageText::
 	line "RAGE is building!"
 	prompt
 
-_MirrorMoveFailedText::
-	text "The MIRROR MOVE"
-	next "failed!"
-	prompt
+;_MirrorMoveFailedText::
+	;text "The MIRROR MOVE"
+	;next "failed!"
+	;prompt
 
 _HitXTimesText::
 	text "Hit @"
