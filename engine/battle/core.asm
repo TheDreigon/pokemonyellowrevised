@@ -3344,7 +3344,7 @@ playPlayerMoveAnimation:
 	ld hl, ReshowSubstituteAnim
 	ld b, BANK(ReshowSubstituteAnim)
 	call nz, Bankswitch
-	;jr MirrorMoveCheck
+	jr MirrorMoveCheck
 playerCheckIfFlyOrChargeEffect:
 	ld c, 30
 	call DelayFrames
@@ -3353,21 +3353,21 @@ playerCheckIfFlyOrChargeEffect:
 	jr z, .playAnim
 	cp CHARGE_EFFECT
 	jr z, .playAnim
-	;jr MirrorMoveCheck
+	jr MirrorMoveCheck
 .playAnim
 	xor a
 	ld [wAnimationType], a
 	ld a, STATUS_AFFECTED_ANIM
 	call PlayMoveAnimation
-;MirrorMoveCheck:
-	;ld a, [wPlayerMoveEffect]
-	;cp MIRROR_MOVE_EFFECT
-	;jr nz, .metronomeCheck
-	;call MirrorMoveCopyMove
-	;jp z, ExecutePlayerMoveDone
-	;xor a
-	;ld [wMonIsDisobedient], a
-	;jp CheckIfPlayerNeedsToChargeUp ; if Mirror Move was successful go back to damage calculation for copied move
+MirrorMoveCheck:
+	ld a, [wPlayerMoveEffect]
+	cp MIRROR_MOVE_EFFECT
+	jr nz, .metronomeCheck
+	call MirrorMoveCopyMove
+	jp z, ExecutePlayerMoveDone
+	xor a
+	ld [wMonIsDisobedient], a
+	jp CheckIfPlayerNeedsToChargeUp ; if Mirror Move was successful go back to damage calculation for copied move
 .metronomeCheck
 	cp METRONOME_EFFECT
 	jr nz, .next
@@ -5255,39 +5255,39 @@ BuildingRageText:
 
 ; copy last move for Mirror Move
 ; sets zero flag on failure and unsets zero flag on success
-;MirrorMoveCopyMove:
+MirrorMoveCopyMove:
 ; Mirror Move makes use of wPlayerUsedMove and wEnemyUsedMove,
 ; which are mainly used to print the "[Pokemon] used [Move]" text.
 ; Both are set to 0 whenever a new Pokemon is sent out
 ; wPlayerUsedMove is also set to 0 whenever the player is fast asleep or frozen solid.
 ; wEnemyUsedMove is also set to 0 whenever the enemy is fast asleep or frozen solid.
 
-	;ldh a, [hWhoseTurn]
-	;and a
+	ldh a, [hWhoseTurn]
+	and a
 ; values for player turn
-	;ld a, [wEnemyUsedMove]
-	;ld hl, wPlayerSelectedMove
-	;ld de, wPlayerMoveNum
-	;jr z, .next
+	ld a, [wEnemyUsedMove]
+	ld hl, wPlayerSelectedMove
+	ld de, wPlayerMoveNum
+	jr z, .next
 ; values for enemy turn
-	;ld a, [wPlayerUsedMove]
-	;ld de, wEnemyMoveNum
-	;ld hl, wEnemySelectedMove
-;.next
-	;ld [hl], a
-	;cp MIRROR_MOVE ; did the target Pokemon last use Mirror Move, and miss?
-	;jr z, .mirrorMoveFailed
-	;and a ; has the target selected any move yet?
-	;jr nz, ReloadMoveData
-;.mirrorMoveFailed
-	;ld hl, MirrorMoveFailedText
-	;call PrintText
-	;xor a
-	;ret
+	ld a, [wPlayerUsedMove]
+	ld de, wEnemyMoveNum
+	ld hl, wEnemySelectedMove
+.next
+	ld [hl], a
+	cp MIRROR_MOVE ; did the target Pokemon last use Mirror Move, and miss?
+	jr z, .mirrorMoveFailed
+	and a ; has the target selected any move yet?
+	jr nz, ReloadMoveData
+.mirrorMoveFailed
+	ld hl, MirrorMoveFailedText
+	call PrintText
+	xor a
+	ret
 
-;MirrorMoveFailedText:
-	;text_far _MirrorMoveFailedText
-	;text_end
+MirrorMoveFailedText:
+	text_far _MirrorMoveFailedText
+	text_end
 
 ; function used to reload move data for moves like Mirror Move and Metronome
 ReloadMoveData:
@@ -5888,7 +5888,7 @@ playEnemyMoveAnimation:
 	ld hl, ReshowSubstituteAnim
 	ld b, BANK(ReshowSubstituteAnim)
 	call nz, Bankswitch ; slide the substitute's sprite out
-	;jr EnemyCheckIfMirrorMoveEffect
+	jr EnemyCheckIfMirrorMoveEffect
 
 EnemyCheckIfFlyOrChargeEffect:
 	call SwapPlayerAndEnemyLevels
@@ -5899,82 +5899,82 @@ EnemyCheckIfFlyOrChargeEffect:
 	jr z, .playAnim
 	cp CHARGE_EFFECT
 	jr z, .playAnim
-	;jr EnemyCheckIfMirrorMoveEffect
+	jr EnemyCheckIfMirrorMoveEffect
 .playAnim
 	xor a
 	ld [wAnimationType], a
 	ld a, STATUS_AFFECTED_ANIM
 	call PlayMoveAnimation
-;EnemyCheckIfMirrorMoveEffect:
-	;ld a, [wEnemyMoveEffect]
-	;cp MIRROR_MOVE_EFFECT
-	;jr nz, .notMirrorMoveEffect
-	;call MirrorMoveCopyMove
-	;jp z, ExecuteEnemyMoveDone
-	;jp CheckIfEnemyNeedsToChargeUp
-;.notMirrorMoveEffect
-	;cp METRONOME_EFFECT
-	;jr nz, .notMetronomeEffect
-	;call MetronomePickMove
-	;jp CheckIfEnemyNeedsToChargeUp
-;.notMetronomeEffect
-	;ld a, [wEnemyMoveEffect]
-	;ld hl, ResidualEffects2
-	;ld de, $1
-	;call IsInArray
-	;jr nc, .notResidual2EffectEnemy
-    ;ld a, [wEnemyMovePower]
-    ;and a ; Check if zero base power
-    ;jp z, JumpMoveEffect
-;.notResidual2EffectEnemy
-	;ld a, [wMoveMissed]
-	;and a
-	;jr z, .moveDidNotMiss
-	;call PrintMoveFailureText
-	;ld a, [wEnemyMoveEffect]
-	;cp EXPLODE_EFFECT
-	;jr z, .handleExplosionMiss
-	;jp ExecuteEnemyMoveDone
-;.moveDidNotMiss
-	;call ApplyAttackToPlayerPokemon
-	;call PrintCriticalOHKOText
-	;callfar DisplayEffectiveness
-	;ld a, 1
-	;ld [wMoveDidntMiss], a
-;.handleExplosionMiss
-	;ld a, [wEnemyMoveEffect]
-	;ld hl, AlwaysHappenSideEffects
-	;ld de, $1
-	;call IsInArray
-	;call c, JumpMoveEffect
-	;ld hl, wBattleMonHP
-	;ld a, [hli]
-	;ld b, [hl]
-	;or b
-	;ret z
-	;call HandleBuildingRage
-	;ld hl, wEnemyBattleStatus1
-	;bit ATTACKING_MULTIPLE_TIMES, [hl] ; is mon hitting multiple times? (example: double kick)
-	;jr z, .notMultiHitMove
-	;push hl
-	;ld hl, wEnemyNumAttacksLeft
-	;dec [hl]
-	;pop hl
-	;jp nz, GetEnemyAnimationType
-	;res ATTACKING_MULTIPLE_TIMES, [hl] ; mon is no longer hitting multiple times
-	;ld hl, HitXTimesText
-	;call PrintText
-	;xor a
-	;ld [wEnemyNumHits], a
-;.notMultiHitMove
-	;ld a, [wEnemyMoveEffect]
-	;and a
-	;jr z, ExecuteEnemyMoveDone
-	;ld hl, SpecialEffects
-	;ld de, $1
-	;call IsInArray
-	;call nc, JumpMoveEffect
-	;jr ExecuteEnemyMoveDone
+EnemyCheckIfMirrorMoveEffect:
+	ld a, [wEnemyMoveEffect]
+	cp MIRROR_MOVE_EFFECT
+	jr nz, .notMirrorMoveEffect
+	call MirrorMoveCopyMove
+	jp z, ExecuteEnemyMoveDone
+	jp CheckIfEnemyNeedsToChargeUp
+.notMirrorMoveEffect
+	cp METRONOME_EFFECT
+	jr nz, .notMetronomeEffect
+	call MetronomePickMove
+	jp CheckIfEnemyNeedsToChargeUp
+.notMetronomeEffect
+	ld a, [wEnemyMoveEffect]
+	ld hl, ResidualEffects2
+	ld de, $1
+	call IsInArray
+	jr nc, .notResidual2EffectEnemy
+    ld a, [wEnemyMovePower]
+    and a ; Check if zero base power
+    jp z, JumpMoveEffect
+.notResidual2EffectEnemy
+	ld a, [wMoveMissed]
+	and a
+	jr z, .moveDidNotMiss
+	call PrintMoveFailureText
+	ld a, [wEnemyMoveEffect]
+	cp EXPLODE_EFFECT
+	jr z, .handleExplosionMiss
+	jp ExecuteEnemyMoveDone
+.moveDidNotMiss
+	call ApplyAttackToPlayerPokemon
+	call PrintCriticalOHKOText
+	callfar DisplayEffectiveness
+	ld a, 1
+	ld [wMoveDidntMiss], a
+.handleExplosionMiss
+	ld a, [wEnemyMoveEffect]
+	ld hl, AlwaysHappenSideEffects
+	ld de, $1
+	call IsInArray
+	call c, JumpMoveEffect
+	ld hl, wBattleMonHP
+	ld a, [hli]
+	ld b, [hl]
+	or b
+	ret z
+	call HandleBuildingRage
+	ld hl, wEnemyBattleStatus1
+	bit ATTACKING_MULTIPLE_TIMES, [hl] ; is mon hitting multiple times? (example: double kick)
+	jr z, .notMultiHitMove
+	push hl
+	ld hl, wEnemyNumAttacksLeft
+	dec [hl]
+	pop hl
+	jp nz, GetEnemyAnimationType
+	res ATTACKING_MULTIPLE_TIMES, [hl] ; mon is no longer hitting multiple times
+	ld hl, HitXTimesText
+	call PrintText
+	xor a
+	ld [wEnemyNumHits], a
+.notMultiHitMove
+	ld a, [wEnemyMoveEffect]
+	and a
+	jr z, ExecuteEnemyMoveDone
+	ld hl, SpecialEffects
+	ld de, $1
+	call IsInArray
+	call nc, JumpMoveEffect
+	jr ExecuteEnemyMoveDone
 
 HitXTimesText:
 	text_far _HitXTimesText
