@@ -236,6 +236,7 @@ INCLUDE "text/SaffronPokecenter.asm"
 INCLUDE "text/MrPsychicsHouse.asm"
 
 INCLUDE "data/text/text_7.asm"
+INCLUDE "engine/battle/just_slot_machine_stuff.asm" ; to free up space in bank1E
 
 
 SECTION "Text 8", ROMX
