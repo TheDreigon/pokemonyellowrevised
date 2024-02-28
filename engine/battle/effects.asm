@@ -1104,15 +1104,15 @@ ChargeMoveEffectText:
 	text_far _ChargeMoveEffectText
 	text_asm
 	ld a, [wChargeMoveNum]
-	cp RAZOR_WIND
-	ld hl, MadeWhirlwindText
-	jr z, .gotText
+	; cp RAZOR_WIND
+	; ld hl, MadeWhirlwindText
+	; jr z, .gotText
 	cp SOLARBEAM
 	ld hl, TookInSunlightText
 	jr z, .gotText
-	cp SKULL_BASH
-	ld hl, LoweredItsHeadText
-	jr z, .gotText
+	; cp SKULL_BASH
+	; ld hl, LoweredItsHeadText
+	; jr z, .gotText
 	cp SKY_ATTACK
 	ld hl, SkyAttackGlowingText
 	jr z, .gotText
@@ -1124,17 +1124,17 @@ ChargeMoveEffectText:
 .gotText
 	ret
 
-MadeWhirlwindText:
-	text_far _MadeWhirlwindText
-	text_end
+; MadeWhirlwindText:
+; 	text_far _MadeWhirlwindText
+; 	text_end
 
 TookInSunlightText:
 	text_far _TookInSunlightText
 	text_end
 
-LoweredItsHeadText:
-	text_far _LoweredItsHeadText
-	text_end
+; LoweredItsHeadText:
+; 	text_far _LoweredItsHeadText
+; 	text_end
 
 SkyAttackGlowingText:
 	text_far _SkyAttackGlowingText

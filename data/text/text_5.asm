@@ -89,24 +89,25 @@ _ChargeMoveEffectText::
 	text "<USER>@"
 	text_end
 
-_MadeWhirlwindText::
-	text_start
-	line "made a whirlwind!"
-	prompt
+; _MadeWhirlwindText::
+; 	text_start
+; 	line "made a whirlwind!"
+; 	prompt
 
 _TookInSunlightText::
 	text_start
 	line "took in sunlight!"
 	prompt
 
-_LoweredItsHeadText::
-	text_start
-	line "lowered its head!"
-	prompt
+; _LoweredItsHeadText::
+; 	text_start
+; 	line "lowered its head!"
+; 	prompt
 
 _SkyAttackGlowingText::
 	text_start
-	line "is glowing!"
+	line "is preparing"
+	cont "an aerial attack!"
 	prompt
 
 _FlewUpHighText::
