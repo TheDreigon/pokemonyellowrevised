@@ -366,7 +366,9 @@ SandAttackAnim:
 	db -1 ; end
 
 HeadButtAnim:
+    battle_anim NO_MOVE, SE_MOVE_MON_HORIZONTALLY
 	battle_anim HEADBUTT, SUBANIM_1_STAR_BIG, 1, 8
+	battle_anim NO_MOVE, SE_RESET_MON_POSITION
 	db -1 ; end
 
 HornAttackAnim:
@@ -493,13 +495,14 @@ SingAnim:
 	db -1 ; end
 
 SupersonicAnim:
-	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 6
+	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 2
+	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 2
 	db -1 ; end
 
 SonicBoomAnim:
-	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
-	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
-	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 6
+	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 5
+	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 5
+	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 5
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG, 1, 6
 	db -1 ; end
 
@@ -552,37 +555,44 @@ SurfAnim:
 	db -1 ; end
 
 IceBeamAnim:
-	battle_anim ICE_BEAM, SUBANIM_0_BEAM, 0, 3
-	battle_anim NO_MOVE, SUBANIM_0_ICE_RISE, 0, 16
+    battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
+	battle_anim ICE_BEAM, SUBANIM_0_BEAM, 0, 5
+	battle_anim NO_MOVE, SUBANIM_0_ICE_RISE, 0, 20
+	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
 	db -1 ; end
 
 BlizzardAnim:
+	battle_anim BLIZZARD, SUBANIM_0_ICE_FALL, 0, 3
 	battle_anim BLIZZARD, SUBANIM_0_ICE_FALL, 0, 4
-	battle_anim HYDRO_PUMP, SUBANIM_0_ICE_FALL, 0, 4
+	battle_anim HYDRO_PUMP, SUBANIM_0_ICE_FALL, 0, 3
 	db -1 ; end
 
 PsyBeamAnim:
-	battle_anim PSYBEAM, SUBANIM_0_BEAM, 0, 3
+	battle_anim PSYBEAM, SUBANIM_0_BEAM, 0, 4
 	battle_anim NO_MOVE, SE_FLASH_SCREEN_LONG
 	db -1 ; end
 
 BubbleBeamAnim:
-	battle_anim BUBBLEBEAM, SUBANIM_0_WATER_BUBBLES, 0, 18
+	battle_anim BUBBLEBEAM, SUBANIM_0_WATER_BUBBLES, 0, 16
 	db -1 ; end
 
 AuroraBeamAnim:
-	battle_anim AURORA_BEAM, SUBANIM_0_BEAM, 0, 3
+    battle_anim NO_MOVE, SE_LIGHT_SCREEN_PALETTE
+	battle_anim AURORA_BEAM, SUBANIM_0_BEAM, 0, 4
 	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
-	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
+    battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
 HyperBeamAnim:
 	battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
 	battle_anim NO_MOVE, SE_SPIRAL_BALLS_INWARD
-	battle_anim HYPER_BEAM, SUBANIM_0_BEAM, 0, 2
+	battle_anim HYPER_BEAM, SUBANIM_0_BEAM, 0, 8
 	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
 	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
-	battle_anim MEGA_PUNCH, SUBANIM_1_STAR_BIG_MOVING, 1, 6
+	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
+	battle_anim MEGA_PUNCH, SUBANIM_1_STAR_BIG_MOVING, 1, 8
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
@@ -677,8 +687,11 @@ RazorLeafAnim:
 	db -1 ; end
 
 SolarBeamAnim:
-	battle_anim SOLARBEAM, SUBANIM_0_BEAM, 0, 6
-	battle_anim NO_MOVE, SUBANIM_0_STAR_TWICE, 0, 6
+    battle_anim LEECH_SEED, SE_LIGHT_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
+    battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
+	battle_anim HYPER_BEAM, SUBANIM_0_BEAM, 0, 4
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
 PoisonPowderAnim:
@@ -695,7 +708,8 @@ SleepPowderAnim:
 
 PetalDanceAnim:
 	battle_anim PETAL_DANCE, SE_LIGHT_SCREEN_PALETTE
-	battle_anim NO_MOVE, SE_PETALS_FALLING
+	battle_anim RAZOR_LEAF, SE_LEAVES_FALLING
+    battle_anim SWIFT, SUBANIM_1_LEAVES_TOSS, 1, 1
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
@@ -713,9 +727,9 @@ DragonRageAnim:
 	db -1 ; end
 
 FireSpinAnim:
-	battle_anim FIRE_SPIN, SUBANIM_1_FLAME_COLUMN_1, 1, 6
-	battle_anim NO_MOVE, SUBANIM_1_FLAME_COLUMN_2, 1, 6
-	battle_anim NO_MOVE, SUBANIM_1_FLAME_COLUMN_3, 1, 6
+	battle_anim FIRE_SPIN, SUBANIM_1_FLAME_COLUMN_2, 1, 10
+	battle_anim FIRE_SPIN, SUBANIM_1_FLAME_COLUMN_2, 1, 10
+	battle_anim FIRE_SPIN, SUBANIM_1_FLAME_COLUMN_2, 1, 10
 	db -1 ; end
 
 ThunderShockAnim:
@@ -773,6 +787,7 @@ ToxicAnim:
 
 ConfusionAnim:
 	battle_anim CONFUSION, SE_FLASH_SCREEN_LONG
+	battle_anim CONFUSION, SE_WAVY_SCREEN
 	db -1 ; end
 
 PsychicAnim:
@@ -1038,7 +1053,7 @@ AmnesiaAnim:
 	db -1 ; end
 
 KinesisAnim:
-	battle_anim KINESIS, SUBANIM_0_STAR_TWICE, 0, 16
+	battle_anim KINESIS, SUBANIM_0_STAR_TWICE, 0, 20
 	db -1 ; end
 
 SoftboiledAnim:
@@ -1130,8 +1145,8 @@ FlashAnim:
 	db -1 ; end
 
 PsywaveAnim:
-	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 6
-	battle_anim CONFUSION, SE_WAVY_SCREEN
+	battle_anim CONFUSION, SUBANIM_0_SOUND_WAVE, 0, 10
+	battle_anim KINESIS, SUBANIM_0_STAR_TWICE, 0, 15
 	db -1 ; end
 
 SplashAnim:

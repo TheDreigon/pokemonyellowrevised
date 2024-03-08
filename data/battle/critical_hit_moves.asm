@@ -7,4 +7,5 @@ HighCriticalMoves:
 	db GUILLOTINE
 	db HORN_ATTACK
 	db HORN_DRILL
+	;db LEEK_STRIKE
 	db -1 ; end
