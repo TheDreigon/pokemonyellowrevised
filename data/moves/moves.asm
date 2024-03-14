@@ -175,7 +175,7 @@ Moves:
 	move SUPER_FANG,   SUPER_FANG_EFFECT,            1, NORMAL,        90, 20
 	move SLASH,        NO_ADDITIONAL_EFFECT,        65, NORMAL,       100, 30 ; high-crit. stronger scratch.
 	move SUBSTITUTE,   SUBSTITUTE_EFFECT,            0, NORMAL,       100, 10 ; natural: gengar, mr mime, porygon, electrode. Learn: alakazam, jolteon.
-	move COUNTER,      DEFENSE_UP1_EFFECT,           1, FIGHTING,     100, 20 ; replaced 'NO_ADDITIONAL_EFFECT' with 'DEFENSE_UP1_EFFECT'. fighting types.
+	move COUNTER,      DEFENSE_UP1_EFFECT,           1, FIGHTING,     100, 20 ; replaced 'NO_ADDITIONAL_EFFECT' with 'DEFENSE_UP1_EFFECT'. fighting types. TODO: test if effect only activates on successful counter.
 	move STRUGGLE,     RECOIL_EFFECT,               40, DRAGON,       100, 10 ; Always have Struggle as the last move on the list (due to Metronome's internal workings). Changed type to Dragon type so it can hit all types, including Ghost.
 	assert_table_length NUM_ATTACKS
 
