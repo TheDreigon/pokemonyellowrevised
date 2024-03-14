@@ -5,7 +5,7 @@
 ; MoveEffectPointerTable indexes (see data/moves/effects_pointers.asm)
 	const_def
 	const NO_ADDITIONAL_EFFECT       ; $00
-	const EFFECT_01                  ; $01 unused
+	;const EFFECT_01                 ; $01 unused
 	const POISON_SIDE_EFFECT1        ; $02
 	const DRAIN_HP_EFFECT            ; $03
 	const BURN_SIDE_EFFECT1          ; $04
