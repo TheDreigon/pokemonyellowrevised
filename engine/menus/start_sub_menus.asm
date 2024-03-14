@@ -119,10 +119,9 @@ StartMenu_Pokemon::
 	ld l, a
 	ld a, [wObtainedBadges] ; badges obtained
 	jp hl
-.outOfBattleMovePointers
+.outOfBattleMovePointers ; TODO.
 	dw .cut
 	dw .fly
-	dw .surf
 	dw .surf
 	dw .strength
 	dw .flash

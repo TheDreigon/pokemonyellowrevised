@@ -246,7 +246,8 @@ _LightScreenProtectedText::
 
 _ReflectGainedArmorText::
 	text "<USER>"
-	line "gained armor!"
+	line "protected against"
+    cont "physical attacks!"
 	prompt
 
 _ShroudedInMistText::
